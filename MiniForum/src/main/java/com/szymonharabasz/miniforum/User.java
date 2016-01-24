@@ -3,15 +3,29 @@ package com.szymonharabasz.miniforum;
 import java.util.Date;
 
 public class User {
-	private int id;
+	private long id;
 	private String username;
 	private String password;
 	private String info;
 	private Date joined;
-	public int getId() {
+	public User(long l) {
+		this.id = l;
+		this.username = "";
+		this.password = "";
+		this.info = "";
+		this.joined = new Date();
+	}	
+	public User(long id, String username, String password, String info, Date joined) {
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.info = info;
+		this.joined = joined;
+	}
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getUsername() {
